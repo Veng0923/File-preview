@@ -1,7 +1,7 @@
 FROM centos:centos7.6.1810
 MAINTAINER chenjh "842761733@qq.com"
 ADD jodconverter-web/target/kkFileView-*.tar.gz /opt/
-COPY fonts/* /usr/share/fonts/chienes/
+COPY fonts/* /usr/share/fonts/chinese/
 RUN yum install -y kde-l10n-Chinese &&\
 	yum install -y glibc-common &&\
 	yum install -y fontconfig &&\
@@ -24,7 +24,7 @@ RUN yum install -y kde-l10n-Chinese &&\
 	rpm -Uvih desktop-integration/openoffice4.1.6-redhat-menus-4.1.6-9790.noarch.rpm &&\
 	rm -f /tmp/openoffice_rpm.tar.gz &&\
 	rm -rf /tmp/zh-CN &&\
-	cd /usr/share/fonts/chienes &&\
+	cd /usr/share/fonts/chinese &&\
 	mkfontscale &&\
 	mkfontdir &&\
 	fc-cache -fv
